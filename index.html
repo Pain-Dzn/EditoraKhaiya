@@ -5,295 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Khaiya Editores & Serviços - Excelência na publicação de obras literárias e académicas desde 2014">
     <title>Khaiya Editores & Serviços</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>K</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%234f1711'>K</text></svg>">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @font-face {
-            font-family: 'Playfair Display';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvUDQZNLo_U2r.woff2) format('woff2');
-        }
-        
-        @font-face {
-            font-family: 'Playfair Display';
-            font-style: normal;
-            font-weight: 700;
-            font-display: swap;
-            src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKeFvUDQZNLo_U2r.woff2) format('woff2');
-        }
-        
-        @font-face {
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: url(https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeMZ9hiA.woff2) format('woff2');
-        }
-        
-        @font-face {
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 600;
-            font-display: swap;
-            src: url(https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYAZ9hiA.woff2) format('woff2');
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .page {
-            min-height: 100vh;
-            display: none;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        
-        .page.active {
-            display: block;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes slideInFromLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes slideInFromRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-        
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-        
-        @keyframes shimmer {
-            0% {
-                background-position: -1000px 0;
-            }
-            100% {
-                background-position: 1000px 0;
-            }
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0891b2 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-gradient::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: float 20s infinite linear;
-        }
-        
-        .nav-link {
-            position: relative;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .nav-link::before {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #3b82f6, #0891b2);
-            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .nav-link:hover::before,
-        .nav-link.active::before {
-            width: 100%;
-        }
-        
-        .card-3d {
-            transform-style: preserve-3d;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .card-3d:hover {
-            transform: translateY(-15px) rotateX(5deg);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
-        }
-        
-        .book-card {
-            perspective: 1500px;
-            cursor: pointer;
-        }
-        
-        .book-cover {
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-style: preserve-3d;
-        }
-        
-        .book-card:hover .book-cover {
-            transform: rotateY(-15deg) translateZ(30px);
-        }
-        
-        .btn-animated {
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .btn-animated::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-            z-index: -1;
-        }
-        
-        .btn-animated:hover::before {
-            left: 100%;
-        }
-        
-        .btn-animated:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
-        }
-        
-        .parallax-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            transform: translateZ(-1px) scale(2);
-        }
-        
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #3b82f6 0%, #0891b2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .service-icon {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .service-card:hover .service-icon {
-            transform: scale(1.2) rotate(10deg);
-        }
-        
-        .loading-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #3b82f6, #0891b2);
-            transition: width 0.3s ease;
-            z-index: 9999;
-        }
-        
-        .shimmer {
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            background-size: 200% 100%;
-            animation: shimmer 2s infinite;
-        }
-        
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
-            transform: scale(1.02);
-            transition: all 0.3s;
-        }
-        
-        .stat-number {
-            animation: pulse 2s infinite;
-        }
-        
-        @media (max-width: 768px) {
-            .card-3d:hover {
-                transform: translateY(-10px);
-            }
-        }
-    </style>
 </head>
 <body class="bg-gray-50">
     <div class="loading-bar" id="loadingBar"></div>
@@ -303,17 +17,17 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center cursor-pointer" onclick="navigateTo('home')">
-                    <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <div class="w-12 h-12 bg-gradient-to-br from-red-800 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
                         <span class="text-white text-2xl font-bold">K</span>
                     </div>
                     <h1 class="text-2xl font-bold gradient-text ml-3">Khaiya</h1>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a onclick="navigateTo('home')" class="nav-link text-gray-700 hover:text-blue-600 font-semibold cursor-pointer active">Início</a>
-                    <a onclick="navigateTo('sobre')" class="nav-link text-gray-700 hover:text-blue-600 font-semibold cursor-pointer">Sobre</a>
-                    <a onclick="navigateTo('servicos')" class="nav-link text-gray-700 hover:text-blue-600 font-semibold cursor-pointer">Serviços</a>
-                    <a onclick="navigateTo('portfolio')" class="nav-link text-gray-700 hover:text-blue-600 font-semibold cursor-pointer">Portfólio</a>
-                    <a onclick="navigateTo('contacto')" class="nav-link text-gray-700 hover:text-blue-600 font-semibold cursor-pointer">Contacto</a>
+                    <a onclick="navigateTo('home')" class="nav-link text-gray-700 hover:text-red-600 font-semibold cursor-pointer active">Início</a>
+                    <a onclick="navigateTo('sobre')" class="nav-link text-gray-700 hover:text-red-600 font-semibold cursor-pointer">Sobre</a>
+                    <a onclick="navigateTo('servicos')" class="nav-link text-gray-700 hover:text-red-600 font-semibold cursor-pointer">Serviços</a>
+                    <a onclick="navigateTo('portfolio')" class="nav-link text-gray-700 hover:text-red-600 font-semibold cursor-pointer">Portfólio</a>
+                    <a onclick="navigateTo('contacto')" class="nav-link text-gray-700 hover:text-red-600 font-semibold cursor-pointer">Contacto</a>
                 </div>
                 <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -324,11 +38,11 @@
         </div>
         <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
             <div class="px-4 py-4 space-y-3">
-                <a onclick="navigateTo('home')" class="block py-2 text-gray-700 hover:text-blue-600 font-semibold cursor-pointer">Início</a>
-                <a onclick="navigateTo('sobre')" class="block py-2 text-gray-700 hover:text-blue-600 font-semibold cursor-pointer">Sobre</a>
-                <a onclick="navigateTo('servicos')" class="block py-2 text-gray-700 hover:text-blue-600 font-semibold cursor-pointer">Serviços</a>
-                <a onclick="navigateTo('portfolio')" class="block py-2 text-gray-700 hover:text-blue-600 font-semibold cursor-pointer">Portfólio</a>
-                <a onclick="navigateTo('contacto')" class="block py-2 text-gray-700 hover:text-blue-600 font-semibold cursor-pointer">Contacto</a>
+                <a onclick="navigateTo('home')" class="block py-2 text-gray-700 hover:text-red-600 font-semibold cursor-pointer">Início</a>
+                <a onclick="navigateTo('sobre')" class="block py-2 text-gray-700 hover:text-red-600 font-semibold cursor-pointer">Sobre</a>
+                <a onclick="navigateTo('servicos')" class="block py-2 text-gray-700 hover:text-red-600 font-semibold cursor-pointer">Serviços</a>
+                <a onclick="navigateTo('portfolio')" class="block py-2 text-gray-700 hover:text-red-600 font-semibold cursor-pointer">Portfólio</a>
+                <a onclick="navigateTo('contacto')" class="block py-2 text-gray-700 hover:text-red-600 font-semibold cursor-pointer">Contacto</a>
             </div>
         </div>
     </nav>
@@ -342,13 +56,13 @@
                         Desde 2014 ao serviço da sociedade moçambicana
                     </div>
                     <h1 class="text-6xl md:text-8xl font-bold mb-6 leading-tight">
-                        Khaiya Editores<br><span class="text-cyan-300">& Serviços</span>
+                        Khaiya Editores<br><span class="text-red-300">& Serviços</span>
                     </h1>
-                    <p class="text-xl md:text-2xl mb-10 text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                    <p class="text-xl md:text-2xl mb-10 text-white/90 max-w-3xl mx-auto leading-relaxed">
                         Excelência na publicação de obras literárias e académicas, colocando o conhecimento ao serviço do progresso
                     </p>
                     <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                        <button onclick="navigateTo('portfolio')" class="btn-animated bg-white text-blue-600 px-10 py-5 rounded-full font-bold text-lg">
+                        <button onclick="navigateTo('portfolio')" class="btn-animated bg-white text-red-600 px-10 py-5 rounded-full font-bold text-lg">
                             Explorar Portfólio
                         </button>
                         <button onclick="navigateTo('contacto')" class="btn-animated border-3 border-white text-white px-10 py-5 rounded-full font-bold text-lg">
@@ -360,15 +74,15 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24">
                     <div class="text-center text-white glass-effect rounded-3xl p-8" style="animation: scaleIn 0.8s ease-out 0.2s both">
                         <div class="text-6xl font-bold mb-3 stat-number">10+</div>
-                        <div class="text-blue-100 text-lg">Anos de Experiência</div>
+                        <div class="text-white/90 text-lg">Anos de Experiência</div>
                     </div>
                     <div class="text-center text-white glass-effect rounded-3xl p-8" style="animation: scaleIn 0.8s ease-out 0.4s both">
                         <div class="text-6xl font-bold mb-3 stat-number">150+</div>
-                        <div class="text-blue-100 text-lg">Obras Publicadas</div>
+                        <div class="text-white/90 text-lg">Obras Publicadas</div>
                     </div>
                     <div class="text-center text-white glass-effect rounded-3xl p-8" style="animation: scaleIn 0.8s ease-out 0.6s both">
                         <div class="text-6xl font-bold mb-3 stat-number">80+</div>
-                        <div class="text-blue-100 text-lg">Autores Parceiros</div>
+                        <div class="text-white/90 text-lg">Autores Parceiros</div>
                     </div>
                 </div>
             </div>
@@ -380,18 +94,18 @@
         <section class="pt-32 pb-20 px-4 min-h-screen bg-white">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
-                    <div class="inline-block mb-4 px-6 py-2 bg-blue-50 rounded-full text-sm font-bold text-blue-600">
+                    <div class="inline-block mb-4 px-6 py-2 bg-red-50 rounded-full text-sm font-bold text-red-600">
                         Conheça Nossa História
                     </div>
                     <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">Sobre Nós</h2>
-                    <div class="w-32 h-2 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto rounded-full"></div>
+                    <div class="w-32 h-2 bg-gradient-to-r from-red-800 to-red-600 mx-auto rounded-full"></div>
                 </div>
                 
                 <div class="grid md:grid-cols-2 gap-16 items-center mb-20">
                     <div>
                         <h3 class="text-4xl font-bold text-gray-900 mb-8">Nossa História</h3>
                         <p class="text-gray-600 mb-6 leading-relaxed text-lg">
-                            Criada em 2014, a <strong>Khaiya Editores & Serviços</strong> é uma instituição moçambicana de direito privado, de carácter científico, tecnológico e de serviços, comprometida com a excelência editorial.
+                            Criada em 2014, a <strong class="text-red-800">Khaiya Editores & Serviços</strong> é uma instituição moçambicana de direito privado, de carácter científico, tecnológico e de serviços, comprometida com a excelência editorial.
                         </p>
                         <p class="text-gray-600 mb-6 leading-relaxed text-lg">
                             Contribuímos para o desenvolvimento social e económico integrado e sustentável, através da busca e disseminação do conhecimento relevante, assistência técnica, agenciamento cultural e investimento estratégico.
@@ -400,15 +114,15 @@
                             Nossa equipa multidisciplinar de investigadores actua nas mais diversas áreas das ciências sociais, humanas e naturais, garantindo rigor académico e relevância prática em cada projecto.
                         </p>
                         <div class="flex flex-wrap gap-3">
-                            <span class="px-5 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-bold">História</span>
-                            <span class="px-5 py-2 bg-cyan-100 text-cyan-700 rounded-full text-sm font-bold">Sociologia</span>
-                            <span class="px-5 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-bold">Antropologia</span>
-                            <span class="px-5 py-2 bg-green-100 text-green-700 rounded-full text-sm font-bold">Meio Ambiente</span>
-                            <span class="px-5 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-bold">Educação</span>
+                            <span class="px-5 py-2 bg-red-100 text-red-700 rounded-full text-sm font-bold">História</span>
+                            <span class="px-5 py-2 bg-red-50 text-red-600 rounded-full text-sm font-bold">Sociologia</span>
+                            <span class="px-5 py-2 bg-red-50 text-red-600 rounded-full text-sm font-bold">Antropologia</span>
+                            <span class="px-5 py-2 bg-red-100 text-red-700 rounded-full text-sm font-bold">Meio Ambiente</span>
+                            <span class="px-5 py-2 bg-red-50 text-red-600 rounded-full text-sm font-bold">Educação</span>
                         </div>
                     </div>
                     <div>
-                        <div class="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-3xl p-10 text-white shadow-2xl card-3d">
+                        <div class="bg-gradient-to-br from-red-800 to-red-600 rounded-3xl p-10 text-white shadow-2xl card-3d">
                             <div class="space-y-8">
                                 <div class="service-card">
                                     <div class="flex items-start space-x-4">
@@ -419,7 +133,7 @@
                                         </div>
                                         <div>
                                             <h4 class="text-2xl font-bold mb-2">Missão</h4>
-                                            <p class="leading-relaxed text-blue-50">Intervir de forma proactiva na criação, inovação, disseminação e oferta de serviços de elevada qualidade.</p>
+                                            <p class="leading-relaxed text-white/90">Intervir de forma proactiva na criação, inovação, disseminação e oferta de serviços de elevada qualidade.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -433,7 +147,7 @@
                                         </div>
                                         <div>
                                             <h4 class="text-2xl font-bold mb-2">Visão</h4>
-                                            <p class="leading-relaxed text-blue-50">Ser uma instituição de referência pela excelência na prestação de serviços e respostas adequadas.</p>
+                                            <p class="leading-relaxed text-white/90">Ser uma instituição de referência pela excelência na prestação de serviços e respostas adequadas.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -447,7 +161,7 @@
                                         </div>
                                         <div>
                                             <h4 class="text-2xl font-bold mb-2">Valores</h4>
-                                            <p class="leading-relaxed text-blue-50">Comprometimento com qualidade, inovação, criatividade e parcerias colaborativas personalizadas.</p>
+                                            <p class="leading-relaxed text-white/90">Comprometimento com qualidade, inovação, criatividade e parcerias colaborativas personalizadas.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -456,11 +170,11 @@
                     </div>
                 </div>
                 
-                <div class="bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl p-12 shadow-xl">
+                <div class="bg-gradient-to-br from-gray-50 to-red-50 rounded-3xl p-12 shadow-xl">
                     <h3 class="text-4xl font-bold text-gray-900 mb-12 text-center">Áreas de Intervenção</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                         <div class="text-center card-3d bg-white p-6 rounded-2xl">
-                            <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
+                            <div class="w-20 h-20 bg-gradient-to-br from-red-800 to-red-600 rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
                                 <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
                                 </svg>
@@ -468,7 +182,7 @@
                             <p class="text-gray-800 font-bold">História & Sociologia</p>
                         </div>
                         <div class="text-center card-3d bg-white p-6 rounded-2xl">
-                            <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
+                            <div class="w-20 h-20 bg-gradient-to-br from-red-700 to-red-500 rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
                                 <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/>
                                 </svg>
@@ -476,7 +190,7 @@
                             <p class="text-gray-800 font-bold">Artes & Cultura</p>
                         </div>
                         <div class="text-center card-3d bg-white p-6 rounded-2xl">
-                            <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
+                            <div class="w-20 h-20 bg-gradient-to-br from-red-600 to-red-400 rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
                                 <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z"/>
                                 </svg>
@@ -484,7 +198,7 @@
                             <p class="text-gray-800 font-bold">Meio Ambiente</p>
                         </div>
                         <div class="text-center card-3d bg-white p-6 rounded-2xl">
-                            <div class="w-20 h-20 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
+                            <div class="w-20 h-20 bg-gradient-to-br from-red-800 to-red-600 rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
                                 <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
                                 </svg>
@@ -492,7 +206,7 @@
                             <p class="text-gray-800 font-bold">Educação</p>
                         </div>
                         <div class="text-center card-3d bg-white p-6 rounded-2xl">
-                            <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
+                            <div class="w-20 h-20 bg-gradient-to-br from-red-700 to-red-500 rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
                                 <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z"/>
                                 </svg>
@@ -500,7 +214,7 @@
                             <p class="text-gray-800 font-bold">Saúde & Nutrição</p>
                         </div>
                         <div class="text-center card-3d bg-white p-6 rounded-2xl">
-                            <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
+                            <div class="w-20 h-20 bg-gradient-to-br from-red-800 to-red-600 rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
                                 <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"/>
                                     <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"/>
@@ -509,7 +223,7 @@
                             <p class="text-gray-800 font-bold">Desenvolvimento</p>
                         </div>
                         <div class="text-center card-3d bg-white p-6 rounded-2xl">
-                            <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
+                            <div class="w-20 h-20 bg-gradient-to-br from-red-700 to-red-500 rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
                                 <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
                                 </svg>
@@ -517,7 +231,7 @@
                             <p class="text-gray-800 font-bold">Políticas Públicas</p>
                         </div>
                         <div class="text-center card-3d bg-white p-6 rounded-2xl">
-                            <div class="w-20 h-20 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
+                            <div class="w-20 h-20 bg-gradient-to-br from-red-600 to-red-400 rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
                                 <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z"/>
                                 </svg>
@@ -532,14 +246,14 @@
 
     <!-- SERVICOS PAGE -->
     <div id="servicos" class="page">
-        <section class="pt-32 pb-20 px-4 min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+        <section class="pt-32 pb-20 px-4 min-h-screen bg-gradient-to-br from-gray-50 to-red-50">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
-                    <div class="inline-block mb-4 px-6 py-2 bg-white rounded-full text-sm font-bold text-blue-600 shadow-sm">
+                    <div class="inline-block mb-4 px-6 py-2 bg-white rounded-full text-sm font-bold text-red-600 shadow-sm">
                         O Que Oferecemos
                     </div>
                     <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">Nossos Serviços</h2>
-                    <div class="w-32 h-2 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto rounded-full"></div>
+                    <div class="w-32 h-2 bg-gradient-to-r from-red-800 to-red-600 mx-auto rounded-full"></div>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto mt-6">
                         Soluções integradas e personalizadas em edição, publicação e serviços culturais
                     </p>
@@ -548,20 +262,20 @@
                 <div class="space-y-12">
                     <!-- Khaiya Editores -->
                     <div class="bg-white rounded-3xl shadow-2xl overflow-hidden card-3d">
-                        <div class="bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 p-12 relative overflow-hidden">
+                        <div class="bg-gradient-to-r from-red-800 via-red-700 to-red-600 p-12 relative overflow-hidden">
                             <div class="absolute inset-0 opacity-20">
                                 <div class="absolute top-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
                                 <div class="absolute bottom-10 left-10 w-60 h-60 bg-white rounded-full blur-3xl"></div>
                             </div>
                             <div class="relative z-10">
                                 <h3 class="text-4xl md:text-5xl font-bold text-white mb-4">Khaiya Editores</h3>
-                                <p class="text-blue-100 text-xl">Produção e edição de material literário e científico de excelência</p>
+                                <p class="text-white/90 text-xl">Produção e edição de material literário e científico de excelência</p>
                             </div>
                         </div>
                         <div class="p-12">
                             <div class="grid md:grid-cols-2 gap-8">
-                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-blue-50 transition-all duration-300">
-                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-red-50 transition-all duration-300">
+                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-red-800 to-red-700 rounded-xl flex items-center justify-center shadow-lg">
                                         <svg class="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 20 20">
                                             <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
                                         </svg>
@@ -571,8 +285,8 @@
                                         <p class="text-gray-600 leading-relaxed">Livros de carácter literário e científico, revistas e folhetos com design profissional e conteúdo rigoroso.</p>
                                     </div>
                                 </div>
-                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-cyan-50 transition-all duration-300">
-                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-red-50 transition-all duration-300">
+                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-red-700 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
                                         <svg class="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 20 20">
                                             <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"/>
                                         </svg>
@@ -582,8 +296,8 @@
                                         <p class="text-gray-600 leading-relaxed">Montagem e edição de obras audiovisuais, documentários e cobertura de eventos científicos e culturais.</p>
                                     </div>
                                 </div>
-                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-purple-50 transition-all duration-300">
-                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-red-50 transition-all duration-300">
+                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-red-600 to-red-500 rounded-xl flex items-center justify-center shadow-lg">
                                         <svg class="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
                                         </svg>
@@ -593,8 +307,8 @@
                                         <p class="text-gray-600 leading-relaxed">Estudos de base em ciências sociais, humanas e do desenvolvimento com metodologia académica rigorosa.</p>
                                     </div>
                                 </div>
-                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-green-50 transition-all duration-300">
-                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-red-50 transition-all duration-300">
+                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-red-800 to-red-700 rounded-xl flex items-center justify-center shadow-lg">
                                         <svg class="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z"/>
                                         </svg>
@@ -604,8 +318,8 @@
                                         <p class="text-gray-600 leading-relaxed">Estudos de impacto de programas sociais, projectos de desenvolvimento e prospecção de mercados.</p>
                                     </div>
                                 </div>
-                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-orange-50 transition-all duration-300">
-                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-red-50 transition-all duration-300">
+                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-red-700 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
                                         <svg class="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/>
                                         </svg>
@@ -616,7 +330,7 @@
                                     </div>
                                 </div>
                                 <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-red-50 transition-all duration-300">
-                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
+                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-red-600 to-red-500 rounded-xl flex items-center justify-center shadow-lg">
                                         <svg class="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"/>
                                         </svg>
@@ -632,20 +346,20 @@
 
                     <!-- Khaiya Serviços -->
                     <div class="bg-white rounded-3xl shadow-2xl overflow-hidden card-3d">
-                        <div class="bg-gradient-to-r from-cyan-600 via-cyan-500 to-blue-500 p-12 relative overflow-hidden">
+                        <div class="bg-gradient-to-r from-red-700 via-red-600 to-red-800 p-12 relative overflow-hidden">
                             <div class="absolute inset-0 opacity-20">
                                 <div class="absolute top-10 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
                                 <div class="absolute bottom-10 right-10 w-60 h-60 bg-white rounded-full blur-3xl"></div>
                             </div>
                             <div class="relative z-10">
                                 <h3 class="text-4xl md:text-5xl font-bold text-white mb-4">Khaiya Serviços</h3>
-                                <p class="text-cyan-100 text-xl">Formação profissional, eventos culturais e soluções integradas</p>
+                                <p class="text-white/90 text-xl">Formação profissional, eventos culturais e soluções integradas</p>
                             </div>
                         </div>
                         <div class="p-12">
                             <div class="grid md:grid-cols-2 gap-8">
-                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-cyan-50 transition-all duration-300">
-                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-red-50 transition-all duration-300">
+                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-red-700 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
                                         <svg class="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 20 20">
                                             <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/>
                                             <path d="M3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0z"/>
@@ -656,8 +370,8 @@
                                         <p class="text-gray-600 leading-relaxed">Capacitação e superação profissional de agentes e gestores culturais institucionais ou individuais.</p>
                                     </div>
                                 </div>
-                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-blue-50 transition-all duration-300">
-                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-red-50 transition-all duration-300">
+                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-red-800 to-red-700 rounded-xl flex items-center justify-center shadow-lg">
                                         <svg class="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
                                         </svg>
@@ -667,8 +381,8 @@
                                         <p class="text-gray-600 leading-relaxed">Concepção e organização de eventos socioculturais, científicos e artísticos de alta qualidade.</p>
                                     </div>
                                 </div>
-                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-purple-50 transition-all duration-300">
-                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-red-50 transition-all duration-300">
+                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-red-600 to-red-500 rounded-xl flex items-center justify-center shadow-lg">
                                         <svg class="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 20 20">
                                             <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/>
                                         </svg>
@@ -678,8 +392,8 @@
                                         <p class="text-gray-600 leading-relaxed">Equipamentos de sonorização, informáticos e meios de apoio para eventos diversos.</p>
                                     </div>
                                 </div>
-                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-green-50 transition-all duration-300">
-                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-red-50 transition-all duration-300">
+                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-red-800 to-red-700 rounded-xl flex items-center justify-center shadow-lg">
                                         <svg class="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
                                         </svg>
@@ -689,8 +403,8 @@
                                         <p class="text-gray-600 leading-relaxed">Consultoria especializada, agenciamento e investimento em projectos culturais e sociais.</p>
                                     </div>
                                 </div>
-                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-orange-50 transition-all duration-300">
-                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-red-50 transition-all duration-300">
+                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-red-700 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
                                         <svg class="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/>
                                         </svg>
@@ -701,7 +415,7 @@
                                     </div>
                                 </div>
                                 <div class="service-card flex items-start space-x-4 p-6 rounded-2xl hover:bg-red-50 transition-all duration-300">
-                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
+                                    <div class="service-icon flex-shrink-0 w-16 h-16 bg-gradient-to-br from-red-600 to-red-500 rounded-xl flex items-center justify-center shadow-lg">
                                         <svg class="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"/>
                                         </svg>
@@ -724,11 +438,11 @@
         <section class="pt-32 pb-20 px-4 min-h-screen bg-white">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
-                    <div class="inline-block mb-4 px-6 py-2 bg-blue-50 rounded-full text-sm font-bold text-blue-600">
+                    <div class="inline-block mb-4 px-6 py-2 bg-red-50 rounded-full text-sm font-bold text-red-600">
                         Nossas Publicações
                     </div>
                     <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">Portfólio</h2>
-                    <div class="w-32 h-2 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto rounded-full"></div>
+                    <div class="w-32 h-2 bg-gradient-to-r from-red-800 to-red-600 mx-auto rounded-full"></div>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto mt-6">
                         Obras que transformam conhecimento em progresso social
                     </p>
@@ -736,7 +450,7 @@
 
                 <!-- Filtros -->
                 <div class="flex flex-wrap justify-center gap-4 mb-16">
-                    <button class="filter-btn px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full font-bold transition-all duration-300" onclick="filterBooks('all')">Todos</button>
+                    <button class="filter-btn px-8 py-3 bg-gradient-to-r from-red-800 to-red-600 text-white rounded-full font-bold transition-all duration-300" onclick="filterBooks('all')">Todos</button>
                     <button class="filter-btn px-8 py-3 bg-gray-200 text-gray-700 rounded-full font-bold hover:bg-gray-300 transition-all duration-300" onclick="filterBooks('historia')">História</button>
                     <button class="filter-btn px-8 py-3 bg-gray-200 text-gray-700 rounded-full font-bold hover:bg-gray-300 transition-all duration-300" onclick="filterBooks('sociologia')">Sociologia</button>
                     <button class="filter-btn px-8 py-3 bg-gray-200 text-gray-700 rounded-full font-bold hover:bg-gray-300 transition-all duration-300" onclick="filterBooks('cultura')">Cultura</button>
@@ -746,125 +460,132 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="bookGrid">
                     <div class="book-card card-3d" data-category="historia">
                         <div class="bg-white rounded-2xl shadow-2xl overflow-hidden h-full">
-                            <div class="book-cover bg-gradient-to-br from-amber-600 to-amber-800 h-80 flex items-center justify-center relative overflow-hidden">
-                                <div class="absolute inset-0 bg-black/20"></div>
+                            <div class="book-cover h-80 flex items-center justify-center relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Memórias da Independência" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-red-900/80 to-red-800/50"></div>
                                 <div class="text-white text-center p-6 relative z-10">
-                                    <div class="text-5xl font-bold mb-4">MEMÓRIAS</div>
+                                    <div class="text-4xl font-bold mb-4">MEMÓRIAS</div>
                                     <p class="text-xl">da Independência</p>
                                 </div>
                             </div>
                             <div class="p-6">
-                                <span class="inline-block px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-bold mb-3">História</span>
+                                <span class="inline-block px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-bold mb-3">História</span>
                                 <h4 class="font-bold text-gray-900 mb-2 text-xl">Memórias da Independência</h4>
                                 <p class="text-sm text-gray-600 mb-1">Autor: <span class="font-semibold">João Nhambire</span></p>
                                 <p class="text-sm text-gray-600 mb-4">Edição: 1ª | 2020</p>
-                                <button class="w-full btn-animated bg-gradient-to-r from-amber-600 to-amber-700 text-white py-3 rounded-xl font-bold">Ver Detalhes</button>
+                                <button class="w-full btn-animated bg-gradient-to-r from-red-800 to-red-700 text-white py-3 rounded-xl font-bold">Ver Detalhes</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="book-card card-3d" data-category="sociologia">
                         <div class="bg-white rounded-2xl shadow-2xl overflow-hidden h-full">
-                            <div class="book-cover bg-gradient-to-br from-purple-600 to-purple-800 h-80 flex items-center justify-center relative overflow-hidden">
-                                <div class="absolute inset-0 bg-black/20"></div>
+                            <div class="book-cover h-80 flex items-center justify-center relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Urbanização em Moçambique" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-red-800/80 to-red-700/50"></div>
                                 <div class="text-white text-center p-6 relative z-10">
-                                    <div class="text-5xl font-bold mb-4">URBANIZAÇÃO</div>
+                                    <div class="text-4xl font-bold mb-4">URBANIZAÇÃO</div>
                                     <p class="text-xl">em Moçambique</p>
                                 </div>
                             </div>
                             <div class="p-6">
-                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-bold mb-3">Sociologia</span>
+                                <span class="inline-block px-3 py-1 bg-red-50 text-red-700 rounded-full text-xs font-bold mb-3">Sociologia</span>
                                 <h4 class="font-bold text-gray-900 mb-2 text-xl">Urbanização em Moçambique</h4>
                                 <p class="text-sm text-gray-600 mb-1">Autor: <span class="font-semibold">Teresa Manjate</span></p>
                                 <p class="text-sm text-gray-600 mb-4">Edição: 1ª | 2021</p>
-                                <button class="w-full btn-animated bg-gradient-to-r from-purple-600 to-purple-700 text-white py-3 rounded-xl font-bold">Ver Detalhes</button>
+                                <button class="w-full btn-animated bg-gradient-to-r from-red-700 to-red-600 text-white py-3 rounded-xl font-bold">Ver Detalhes</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="book-card card-3d" data-category="cultura">
                         <div class="bg-white rounded-2xl shadow-2xl overflow-hidden h-full">
-                            <div class="book-cover bg-gradient-to-br from-pink-600 to-pink-800 h-80 flex items-center justify-center relative overflow-hidden">
-                                <div class="absolute inset-0 bg-black/20"></div>
+                            <div class="book-cover h-80 flex items-center justify-center relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Arte Makonde" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-red-700/80 to-red-600/50"></div>
                                 <div class="text-white text-center p-6 relative z-10">
-                                    <div class="text-5xl font-bold mb-4">ARTE</div>
+                                    <div class="text-4xl font-bold mb-4">ARTE</div>
                                     <p class="text-xl">Makonde</p>
                                 </div>
                             </div>
                             <div class="p-6">
-                                <span class="inline-block px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-xs font-bold mb-3">Cultura</span>
+                                <span class="inline-block px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-bold mb-3">Cultura</span>
                                 <h4 class="font-bold text-gray-900 mb-2 text-xl">Arte Makonde</h4>
                                 <p class="text-sm text-gray-600 mb-1">Autor: <span class="font-semibold">Carlos Maússe</span></p>
                                 <p class="text-sm text-gray-600 mb-4">Edição: 2ª | 2019</p>
-                                <button class="w-full btn-animated bg-gradient-to-r from-pink-600 to-pink-700 text-white py-3 rounded-xl font-bold">Ver Detalhes</button>
+                                <button class="w-full btn-animated bg-gradient-to-r from-red-600 to-red-500 text-white py-3 rounded-xl font-bold">Ver Detalhes</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="book-card card-3d" data-category="ambiente">
                         <div class="bg-white rounded-2xl shadow-2xl overflow-hidden h-full">
-                            <div class="book-cover bg-gradient-to-br from-green-600 to-green-800 h-80 flex items-center justify-center relative overflow-hidden">
-                                <div class="absolute inset-0 bg-black/20"></div>
+                            <div class="book-cover h-80 flex items-center justify-center relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Mudanças Climáticas" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-red-900/80 to-red-800/50"></div>
                                 <div class="text-white text-center p-6 relative z-10">
-                                    <div class="text-5xl font-bold mb-4">MUDANÇAS</div>
+                                    <div class="text-4xl font-bold mb-4">MUDANÇAS</div>
                                     <p class="text-xl">Climáticas</p>
                                 </div>
                             </div>
                             <div class="p-6">
-                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold mb-3">Ambiente</span>
+                                <span class="inline-block px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-bold mb-3">Ambiente</span>
                                 <h4 class="font-bold text-gray-900 mb-2 text-xl">Mudanças Climáticas no Sul</h4>
                                 <p class="text-sm text-gray-600 mb-1">Autor: <span class="font-semibold">Ana Tembe</span></p>
                                 <p class="text-sm text-gray-600 mb-4">Edição: 1ª | 2022</p>
-                                <button class="w-full btn-animated bg-gradient-to-r from-green-600 to-green-700 text-white py-3 rounded-xl font-bold">Ver Detalhes</button>
+                                <button class="w-full btn-animated bg-gradient-to-r from-red-800 to-red-700 text-white py-3 rounded-xl font-bold">Ver Detalhes</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="book-card card-3d" data-category="historia">
                         <div class="bg-white rounded-2xl shadow-2xl overflow-hidden h-full">
-                            <div class="book-cover bg-gradient-to-br from-blue-600 to-blue-800 h-80 flex items-center justify-center relative overflow-hidden">
-                                <div class="absolute inset-0 bg-black/20"></div>
+                            <div class="book-cover h-80 flex items-center justify-center relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Resistência Colonial" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-red-800/80 to-red-700/50"></div>
                                 <div class="text-white text-center p-6 relative z-10">
-                                    <div class="text-5xl font-bold mb-4">RESISTÊNCIA</div>
+                                    <div class="text-4xl font-bold mb-4">RESISTÊNCIA</div>
                                     <p class="text-xl">Colonial</p>
                                 </div>
                             </div>
                             <div class="p-6">
-                                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold mb-3">História</span>
+                                <span class="inline-block px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-bold mb-3">História</span>
                                 <h4 class="font-bold text-gray-900 mb-2 text-xl">Resistência Colonial em Gaza</h4>
                                 <p class="text-sm text-gray-600 mb-1">Autor: <span class="font-semibold">Pedro Sitoe</span></p>
                                 <p class="text-sm text-gray-600 mb-4">Edição: 1ª | 2018</p>
-                                <button class="w-full btn-animated bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 rounded-xl font-bold">Ver Detalhes</button>
+                                <button class="w-full btn-animated bg-gradient-to-r from-red-700 to-red-600 text-white py-3 rounded-xl font-bold">Ver Detalhes</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="book-card card-3d" data-category="sociologia">
                         <div class="bg-white rounded-2xl shadow-2xl overflow-hidden h-full">
-                            <div class="book-cover bg-gradient-to-br from-indigo-600 to-indigo-800 h-80 flex items-center justify-center relative overflow-hidden">
-                                <div class="absolute inset-0 bg-black/20"></div>
+                            <div class="book-cover h-80 flex items-center justify-center relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Género e Sociedade" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-red-700/80 to-red-600/50"></div>
                                 <div class="text-white text-center p-6 relative z-10">
-                                    <div class="text-5xl font-bold mb-4">GÉNERO</div>
+                                    <div class="text-4xl font-bold mb-4">GÉNERO</div>
                                     <p class="text-xl">e Sociedade</p>
                                 </div>
                             </div>
                             <div class="p-6">
-                                <span class="inline-block px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-bold mb-3">Sociologia</span>
+                                <span class="inline-block px-3 py-1 bg-red-50 text-red-700 rounded-full text-xs font-bold mb-3">Sociologia</span>
                                 <h4 class="font-bold text-gray-900 mb-2 text-xl">Género e Sociedade Rural</h4>
                                 <p class="text-sm text-gray-600 mb-1">Autor: <span class="font-semibold">Mariana Cossa</span></p>
                                 <p class="text-sm text-gray-600 mb-4">Edição: 1ª | 2023</p>
-                                <button class="w-full btn-animated bg-gradient-to-r from-indigo-600 to-indigo-700 text-white py-3 rounded-xl font-bold">Ver Detalhes</button>
+                                <button class="w-full btn-animated bg-gradient-to-r from-red-600 to-red-500 text-white py-3 rounded-xl font-bold">Ver Detalhes</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="book-card card-3d" data-category="cultura">
                         <div class="bg-white rounded-2xl shadow-2xl overflow-hidden h-full">
-                            <div class="book-cover bg-gradient-to-br from-red-600 to-red-800 h-80 flex items-center justify-center relative overflow-hidden">
-                                <div class="absolute inset-0 bg-black/20"></div>
+                            <div class="book-cover h-80 flex items-center justify-center relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Marrabenta" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-red-900/80 to-red-800/50"></div>
                                 <div class="text-white text-center p-6 relative z-10">
-                                    <div class="text-5xl font-bold mb-4">MARRABENTA</div>
-                                    <p class="text-xl">História e Evolução</p>
+                                    <div class="text-4xl font-bold mb-4">MARRABENTA</div>
+                                    <p class="text-xl">História Musical</p>
                                 </div>
                             </div>
                             <div class="p-6">
@@ -872,26 +593,27 @@
                                 <h4 class="font-bold text-gray-900 mb-2 text-xl">Marrabenta: História Musical</h4>
                                 <p class="text-sm text-gray-600 mb-1">Autor: <span class="font-semibold">Alberto Nkomo</span></p>
                                 <p class="text-sm text-gray-600 mb-4">Edição: 1ª | 2020</p>
-                                <button class="w-full btn-animated bg-gradient-to-r from-red-600 to-red-700 text-white py-3 rounded-xl font-bold">Ver Detalhes</button>
+                                <button class="w-full btn-animated bg-gradient-to-r from-red-800 to-red-700 text-white py-3 rounded-xl font-bold">Ver Detalhes</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="book-card card-3d" data-category="ambiente">
                         <div class="bg-white rounded-2xl shadow-2xl overflow-hidden h-full">
-                            <div class="book-cover bg-gradient-to-br from-teal-600 to-teal-800 h-80 flex items-center justify-center relative overflow-hidden">
-                                <div class="absolute inset-0 bg-black/20"></div>
+                            <div class="book-cover h-80 flex items-center justify-center relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Biodiversidade Costeira" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-red-800/80 to-red-700/50"></div>
                                 <div class="text-white text-center p-6 relative z-10">
-                                    <div class="text-5xl font-bold mb-4">BIODIVERSIDADE</div>
+                                    <div class="text-4xl font-bold mb-4">BIODIVERSIDADE</div>
                                     <p class="text-xl">Costeira</p>
                                 </div>
                             </div>
                             <div class="p-6">
-                                <span class="inline-block px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-xs font-bold mb-3">Ambiente</span>
+                                <span class="inline-block px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-bold mb-3">Ambiente</span>
                                 <h4 class="font-bold text-gray-900 mb-2 text-xl">Biodiversidade Costeira</h4>
                                 <p class="text-sm text-gray-600 mb-1">Autor: <span class="font-semibold">Isabel Macamo</span></p>
                                 <p class="text-sm text-gray-600 mb-4">Edição: 1ª | 2024</p>
-                                <button class="w-full btn-animated bg-gradient-to-r from-teal-600 to-teal-700 text-white py-3 rounded-xl font-bold">Ver Detalhes</button>
+                                <button class="w-full btn-animated bg-gradient-to-r from-red-700 to-red-600 text-white py-3 rounded-xl font-bold">Ver Detalhes</button>
                             </div>
                         </div>
                     </div>
@@ -902,12 +624,12 @@
 
     <!-- CONTACTO PAGE -->
     <div id="contacto" class="page">
-        <section class="pt-32 pb-20 px-4 min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+        <section class="pt-32 pb-20 px-4 min-h-screen bg-gradient-to-br from-gray-50 to-red-50">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
-                    <div class="inline-block mb-4 px-6 py-2 bg-white rounded-full text-sm font-bold text-blue-600 shadow-sm">Fale Connosco</div>
+                    <div class="inline-block mb-4 px-6 py-2 bg-white rounded-full text-sm font-bold text-red-600 shadow-sm">Fale Connosco</div>
                     <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">Contacto</h2>
-                    <div class="w-32 h-2 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto rounded-full"></div>
+                    <div class="w-32 h-2 bg-gradient-to-r from-red-800 to-red-600 mx-auto rounded-full"></div>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto mt-6">Estamos prontos para colaborar consigo</p>
                 </div>
 
@@ -915,25 +637,25 @@
                     <div class="bg-white rounded-3xl shadow-2xl p-10 card-3d">
                         <h3 class="text-3xl font-bold text-gray-900 mb-8">Envie uma Mensagem</h3>
                         <form id="contactForm" class="space-y-6">
-                            <div><label class="block text-gray-700 font-bold mb-2">Nome Completo</label><input type="text" required class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl transition-all duration-300" placeholder="Seu nome"></div>
-                            <div><label class="block text-gray-700 font-bold mb-2">E-mail</label><input type="email" required class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl transition-all duration-300" placeholder="seu@email.com"></div>
-                            <div><label class="block text-gray-700 font-bold mb-2">Telefone</label><input type="tel" class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl transition-all duration-300" placeholder="+258 ..."></div>
-                            <div><label class="block text-gray-700 font-bold mb-2">Assunto</label><select class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl transition-all duration-300"><option>Publicação de Livro</option><option>Consultoria</option><option>Evento</option><option>Formação</option><option>Outro</option></select></div>
-                            <div><label class="block text-gray-700 font-bold mb-2">Mensagem</label><textarea rows="4" required class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl transition-all duration-300" placeholder="Como podemos ajudar?"></textarea></div>
-                            <button type="submit" class="w-full btn-animated bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-4 rounded-xl font-bold text-lg">Enviar Mensagem</button>
+                            <div><label class="block text-gray-700 font-bold mb-2">Nome Completo</label><input type="text" required class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl transition-all duration-300 focus:border-red-600" placeholder="Seu nome"></div>
+                            <div><label class="block text-gray-700 font-bold mb-2">E-mail</label><input type="email" required class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl transition-all duration-300 focus:border-red-600" placeholder="seu@email.com"></div>
+                            <div><label class="block text-gray-700 font-bold mb-2">Telefone</label><input type="tel" class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl transition-all duration-300 focus:border-red-600" placeholder="+258 ..."></div>
+                            <div><label class="block text-gray-700 font-bold mb-2">Assunto</label><select class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl transition-all duration-300 focus:border-red-600"><option>Publicação de Livro</option><option>Consultoria</option><option>Evento</option><option>Formação</option><option>Outro</option></select></div>
+                            <div><label class="block text-gray-700 font-bold mb-2">Mensagem</label><textarea rows="4" required class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl transition-all duration-300 focus:border-red-600" placeholder="Como podemos ajudar?"></textarea></div>
+                            <button type="submit" class="w-full btn-animated bg-gradient-to-r from-red-800 to-red-600 text-white py-4 rounded-xl font-bold text-lg">Enviar Mensagem</button>
                         </form>
                     </div>
 
                     <div class="space-y-6">
                         <div class="bg-white rounded-3xl shadow-xl p-8 card-3d">
-                            <div class="flex items-center mb-6"><div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg text-white text-3xl font-bold">M</div><h3 class="text-2xl font-bold text-gray-900 ml-4">Sede - Matola</h3></div>
+                            <div class="flex items-center mb-6"><div class="w-16 h-16 bg-gradient-to-br from-red-800 to-red-700 rounded-xl flex items-center justify-center shadow-lg text-white text-3xl font-bold">M</div><h3 class="text-2xl font-bold text-gray-900 ml-4">Sede - Matola</h3></div>
                             <div class="space-y-4"><p class="text-gray-600 leading-relaxed"><strong>Endereço:</strong><br>Avenida de Khongolote<br>Distrito Urbano da Machava<br>Khongolote - Cidade da Matola</p></div>
                         </div>
                         <div class="bg-white rounded-3xl shadow-xl p-8 card-3d">
-                            <div class="flex items-center mb-6"><div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg text-white text-3xl font-bold">R</div><h3 class="text-2xl font-bold text-gray-900 ml-4">Representação - Maputo</h3></div>
+                            <div class="flex items-center mb-6"><div class="w-16 h-16 bg-gradient-to-br from-red-700 to-red-600 rounded-xl flex items-center justify-center shadow-lg text-white text-3xl font-bold">R</div><h3 class="text-2xl font-bold text-gray-900 ml-4">Representação - Maputo</h3></div>
                             <div class="space-y-4"><p class="text-gray-600 leading-relaxed"><strong>Endereço:</strong><br>Rua da Resistência, nº 1141, r/c<br>Cidade de Maputo</p></div>
                         </div>
-                        <div class="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl shadow-xl p-8 text-white card-3d">
+                        <div class="bg-gradient-to-br from-red-800 to-red-600 rounded-3xl shadow-xl p-8 text-white card-3d">
                             <h3 class="text-2xl font-bold mb-6">Contactos Directos</h3>
                             <div class="space-y-4"><p><strong>E-mail:</strong><br><a href="mailto:info@khaiyaser.com" class="hover:underline">info@khaiyaser.com</a></p><p><strong>Telefone:</strong><br><a href="tel:+258873868070" class="hover:underline">(+258) 873 868 070</a></p><p><strong>Website:</strong><br><a href="https://www.khaiyaserv.co.mz" target="_blank" class="hover:underline">www.khaiyaserv.co.mz</a></p></div>
                             <div class="mt-8 pt-6 border-t border-white/20"><p class="font-bold mb-2">Horário:</p><p>Segunda a Sexta: 08:00 - 17:00</p><p>Sábado: 09:00 - 13:00</p></div>
@@ -946,12 +668,6 @@
 
     <footer class="bg-gray-900 text-white py-12 px-4"><div class="max-w-7xl mx-auto text-center"><p class="text-gray-400 mb-4">&copy; 2024 Khaiya Editores & Serviços. Todos os direitos reservados.</p><div class="flex justify-center space-x-6"><a href="#" class="text-gray-400 hover:text-white transition">Política de Privacidade</a><a href="#" class="text-gray-400 hover:text-white transition">Termos</a></div></div></footer>
 
-    <script>
-        let currentPage = 'home';
-        function navigateTo(page) {document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));document.getElementById(page).classList.add('active');document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));document.querySelectorAll('.nav-link').forEach(link => {if(link.textContent.toLowerCase().includes(page === 'home' ? 'início' : page)) link.classList.add('active');});document.getElementById('mobileMenu').classList.add('hidden');currentPage = page;const loadingBar = document.getElementById('loadingBar');loadingBar.style.width = '100%';setTimeout(() => loadingBar.style.width = '0', 500);window.scrollTo({top: 0, behavior: 'smooth'});}
-        function toggleMobileMenu() {document.getElementById('mobileMenu').classList.toggle('hidden');}
-        function filterBooks(category) {const books = document.querySelectorAll('.book-card');const buttons = document.querySelectorAll('.filter-btn');buttons.forEach(btn => {btn.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-cyan-500', 'text-white');btn.classList.add('bg-gray-200', 'text-gray-700');});event.target.classList.remove('bg-gray-200', 'text-gray-700');event.target.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-cyan-500', 'text-white');books.forEach(book => {if (category === 'all' || book.dataset.category === category) {book.style.display = 'block';setTimeout(() => {book.style.opacity = '1';book.style.transform = 'translateY(0)';}, 10);} else {book.style.opacity = '0';book.style.transform = 'translateY(30px)';setTimeout(() => book.style.display = 'none', 300);}});}
-        document.getElementById('contactForm').addEventListener('submit', function(e) {e.preventDefault();alert('Mensagem enviada com sucesso! Entraremos em contacto em breve.');this.reset();});
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
